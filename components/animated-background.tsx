@@ -87,6 +87,7 @@ export default function AnimatedBackground() {
     
     // Animation loop
     function animate() {
+      if (!ctx) return;
       ctx.clearRect(0, 0, width, height);
       
       // Update and draw particles
@@ -103,6 +104,8 @@ export default function AnimatedBackground() {
     
     function connectParticles() {
       const maxDistance = 150;
+
+      if (!ctx) return; // Add null check for ctx
       
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
