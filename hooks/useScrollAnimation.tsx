@@ -11,7 +11,7 @@ export default function useScrollAnimation<T extends HTMLElement = HTMLElement>(
   options: ScrollAnimationOptions = {}
 ): [RefObject<T>, boolean] {
   const [isVisible, setIsVisible] = useState(false);
-  const elementRef = useRef<T>(null);
+  const elementRef = useRef<T>(null as unknown as T); // Explicitly type the ref
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
