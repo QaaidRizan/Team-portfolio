@@ -5,7 +5,7 @@ import Image from "next/image"
 import car from "@/assets/Car2.png"
 import hospital from "@/assets/image.png";
 import andrew from "@/assets/Andrew.png";
-import pdf from "@/assets/pdf.png";
+import pdf from "@/assets/PDF.png";
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Code, Database, Globe, Layers, MessageSquare, Phone, Server, Users } from "lucide-react"
