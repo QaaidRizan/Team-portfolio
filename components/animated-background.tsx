@@ -50,37 +50,44 @@ export default function AnimatedBackground() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
     
+    // Store width and height variables at the useEffect level
+    // so they're available to all nested functions
+    let width = canvas.width;
+    let height = canvas.height;
+    
+    // Create particles array first - before any function declarations
+    let particles: Particle[] = [];
+    
     // Set canvas to full width and height
     const handleResize = () => {
-      if (canvas) {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        initParticles(); // Reinitialize particles when canvas size changes
-      }
+      // Since we checked canvas is not null above, we can use non-null assertion here
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+      initParticles(); // Reinitialize particles when canvas size changes
     };
     
     window.addEventListener('resize', handleResize);
     handleResize();
     
-    // Create particles
-    let particles: Particle[] = [];
-    
     function initParticles() {
       particles = [];
-      const particleCount = Math.min(100, Math.floor((canvas.width * canvas.height) / 8000));
+      // Use the width and height variables we've already defined
+      const particleCount = Math.min(100, Math.floor((width * height) / 8000));
       
       for (let i = 0; i < particleCount; i++) {
-        particles.push(new Particle(canvas.width, canvas.height));
+        particles.push(new Particle(width, height));
       }
     }
     
     // Animation loop
     function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, width, height);
       
       // Update and draw particles
       for (let i = 0; i < particles.length; i++) {
-        particles[i].update(canvas.width, canvas.height);
+        particles[i].update(width, height);
         particles[i].draw(ctx);
       }
       
