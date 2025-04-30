@@ -72,12 +72,16 @@ export default function AnimatedBackground() {
     handleResize();
     
     function initParticles() {
+      if (!canvas) return; // Add a runtime check for null
+
       particles = [];
-      // Use the width and height variables we've already defined
-      const particleCount = Math.min(100, Math.floor((width * height) / 8000));
-      
+      const particleCount = Math.min(
+        100,
+        Math.floor((canvas.width * canvas.height) / 8000)
+      );
+
       for (let i = 0; i < particleCount; i++) {
-        particles.push(new Particle(width, height));
+        particles.push(new Particle(canvas.width, canvas.height));
       }
     }
     
