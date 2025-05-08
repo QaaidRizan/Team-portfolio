@@ -309,7 +309,7 @@ export default function Home() {
             <div className={testimonialVisible ? 'animate-scaleIn' : ''}>
               <TestimonialCard
                 quote="Working with this team was a pleasure. They understood our requirements perfectly and delivered a product that has significantly improved our business operations."
-                author="Michael Chen"
+                author="Sahan Silva"
                 position="CEO, InnovateTech"
                 rating={5}
               />
@@ -317,7 +317,7 @@ export default function Home() {
             <div className={testimonialVisible ? 'animate-scaleIn' : ''}>
               <TestimonialCard
                 quote="Their expertise and professionalism are unmatched. The solution they developed has helped us streamline our processes and increase efficiency."
-                author="Emily Rodriguez"
+                author="Emily Farnando"
                 position="Product Manager, DataFlow"
                 rating={4}
               />

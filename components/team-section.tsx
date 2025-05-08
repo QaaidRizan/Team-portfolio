@@ -42,7 +42,7 @@ export default function TeamSection() {
                 <h3 className="text-xl font-bold group-hover:text-blue-600 transition-colors">M R M Qaaid</h3>
                 <p className="text-sm text-blue-600 font-medium mb-4">Lead Software Engineer</p>
                 <p className="text-sm text-gray-500 mb-4">
-                  Specializes in system architecture and backend development with over 8 years of experience.
+                  Specializes in system architecture and backend development with over 2 years of experience.
                 </p>
                 <div className="flex justify-center space-x-4">
                   <Link href="https://github.com/QaaidRizan" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-600 transition-colors">
